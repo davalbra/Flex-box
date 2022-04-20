@@ -9,7 +9,9 @@ html {
 }
 .container {
   background-color: #333;
-  height: 30vh;
+  /* height: 400px; */
+  height: 90vh;
+  width: 100%;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -23,18 +25,29 @@ html {
 }
 .items {
   border: medium solid #999;
-  /* width: 20%; */
-  /* height: 20%; */
+  /* width: 20%;
+  height: 20%; */
   background-color: #666;
   color: white;
-  flex-grow: 1;
+  flex-grow: 0;
   flex-shrink: 1;
   flex-basis: auto;
+  flex-basis: 100px;
+  /* Es el tamanio del elemento hijo dentro de la linea e la caja flexbox se la caja flexbox tiene direccion fe fila, flex-basis representa el width 
+  si la caja flexbox tiene direccion de columna, flex-bases representa el height 
+  valor por ddefecto auto */
+  flex: 1 0 150pxs;
+  /* Es un shorthand de las propiedades de flex-grow- flex-shirk flexy flex-basis en el orden mensionado */
+  order: 0;
+  /* Representa el orden que tendran los elementos hijos en la caja flexbox valor por defecto 0 un valor menor siempre ira antes que un valor menor */
+  align-self: stretch;
 }
 .items:nth-child(2) {
-  flex-grow: 2;
+  /* flex-grow: 1; */
+  order: -1;
 }
 
-/* .items:nth-child(2) {
-  font-size: 250%;
-} */ ;
+.items:nth-child(3) {
+  /* font-size: 250%; */
+  align-self: flex-end;
+}
